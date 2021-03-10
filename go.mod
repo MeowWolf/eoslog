@@ -1,3 +1,3 @@
-module log
+module eoslog
 
 go 1.16
