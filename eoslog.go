@@ -19,12 +19,12 @@ var (
 )
 
 func init() {
-	Info = log.New(ioutil.Discard,
+	Trace = log.New(ioutil.Discard,
 		"TRACE: ",
 		log.Ldate|log.Ltime|log.Lshortfile)
 
 	Debug = log.New(ioutil.Discard,
-		"Debug: ",
+		"DEBUG: ",
 		log.Ldate|log.Ltime|log.Lshortfile)
 
 	Info = log.New(os.Stdout,
