@@ -4,26 +4,26 @@ Package eoslog implements a basic custom logger with standard log levels
 package eoslog
 
 import (
-	"io/ioutil"
 	"log"
 	"os"
 )
 
 // Standard log levels
 var (
-	Trace *log.Logger // Trace - just about anything
-	Debug *log.Logger // Debug - Debug messages
-	Info  *log.Logger // Info - Important information
-	Warn  *log.Logger // Warn - Be concerned
-	Error *log.Logger // Error - Critical problem
+	Trace    *log.Logger // Trace - just about anything
+	Debug    *log.Logger // Debug - Debug messages
+	Info     *log.Logger // Info - Important information
+	Warn     *log.Logger // Warn - Be concerned
+	Error    *log.Logger // Error - Serious problem
+	Critical *log.Logger // Critical - Critical problem
 )
 
 func init() {
-	Trace = log.New(ioutil.Discard,
+	Trace = log.New(os.Stdout,
 		"TRACE: ",
 		log.Ldate|log.Ltime|log.Lshortfile)
 
-	Debug = log.New(ioutil.Discard,
+	Debug = log.New(os.Stdout,
 		"DEBUG: ",
 		log.Ldate|log.Ltime|log.Lshortfile)
 
@@ -37,5 +37,9 @@ func init() {
 
 	Error = log.New(os.Stdout,
 		"ERROR: ",
+		log.Ldate|log.Ltime|log.Lshortfile)
+
+	Critical = log.New(os.Stdout,
+		"CRITICAL: ",
 		log.Ldate|log.Ltime|log.Lshortfile)
 }
