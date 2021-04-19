@@ -1,6 +1,6 @@
 # eoslog
 
-Super simple log formatter with standard (non-go) log levels
+Simple log formatter with standard (non-go) log levels
 
 ## Usage
 
